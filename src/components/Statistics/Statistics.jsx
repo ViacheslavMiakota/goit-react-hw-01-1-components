@@ -13,5 +13,11 @@ const Statistics = ({ title, stats }) => {
 export default Statistics;
 Statistics.prototype = {
   title: PropTypes.string,
-  stats: PropTypes.string.isRequired,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    }).isRequired
+  ).isRequired,
 };

@@ -19,7 +19,11 @@ function getRandomHexColor() {
 }
 export default StatisticEvent;
 StatisticEvent.prototype = {
-  id: PropTypes.number.isRequired,
-  label: PropTypes.string.isRequired,
-  percentage: PropTypes.number.isRequired,
+  events: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    }).isRequired
+  ).isRequired,
 };
